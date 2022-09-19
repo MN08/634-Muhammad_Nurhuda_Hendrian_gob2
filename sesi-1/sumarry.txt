@@ -1,0 +1,84 @@
+EARLY SETUP
+>tools
+    - install VSCODE (code editor) (https://code.visualstudio.com/download | link download , https://code.visualstudio.com/docs/setup/windows | link cara install)
+        ->install plugin "GO", "Prettier - Code Formatter"
+    - download Go ( https://go.dev/ )
+        -> intall Go (https://go.dev/doc/install)
+
+>Github (https://github.com/) (untuk penyimpanan data secara online)
+    -> buat akun github
+        ->buat repository github (click new) (semua sesi 1 repo) contoh: repo golang -> sesi 1 - sesi 16
+    * git push : untuk upload ke repository
+      git pull : untuk download dari repository ke pc
+
+
+======================================================================================================================
+introduction to Golang
+
+use "Pacakge Main" is a must
+
+import "fmt"
+
+create main func " func main(){}"
+
+basic print command
+- fmt.Print("print )
+- fmt.Println("print") // create new line after string Print 
+- fmt.Println("print", "prints") // if more than one Println create space
+
+command commment
+- // single line commment
+- */ more than one line comment */
+
+
+variable dan type data
+variable = tempat untuk menampung data
+tipe data = timpe dari data yang disimpan dalam variable
+    list tipe data dan fungsinya dapat dilihat di  : https://dasarpemrogramangolang.novalagung.com/A-tipe-data.html
+
+format membuat variable
+    - var namaVariable typedata
+        contoh : var nama String
+                 var umur int
+
+    pembuatan varibale
+     - var namaVariable  // harus diberi var
+        contoh : var name  
+        - untuk mengetahui tipe data apa bisa print pakai "%T"
+            contoh : fmt.Print("%T", name) //akan menampilkan tipe data name ex: string
+     - namaVariable := value
+        contoh : name := "nama kamu"
+
+
+    multiple variable declaration
+    - var namaVariable1, namaVariable2, namaVariable3 tipedata = "value1", "value2", "value3"
+        contoh : var nameOne, nameTwo, nameThree string = "name1", "name2", "name3"
+    -tanpa var
+        - namaVariable1, namaVariable2, namaVariable3 tipedata := "value1", "value2", "value3"
+        contoh : nameOne, nameTwo, nameThree string := "name1", "name2", "name3"
+
+DATA TYPE
+Tipe data pada bahasa Go terbagi menjadi 4 kategori dengan detail seperti berikut ini:
+1.Basic Type: number, string, boolean.
+2.Aggregate Type: array dan struct.
+3.Reference Type: slice, pointer, map, function, channel
+4.Interface Type: interface
+
+constant
+Constant (const) atau Konstanta merupakan jenis variable pada bahasa Go yang nilainya tidak dapat diubah.
+Contohnya jika kitamemiliki nilai-nilai tetap seperti PI
+syntax : const nama_constanta typedata = value
+        contoh : const full_name = "bsdbasj sdjasghd"
+
+operator
+Pada bahasa Go, terdapat 3 jenis operator yang perlu kita ketahui yaitu operator aritmatika, operator logika danoperator perbandingan.
+
+aritmatika
+https://www.tutorialspoint.com/go/go_operators.htm
+Relational Operators
+https://www.tutorialspoint.com/go/go_operators.htm
+Logical Operators
+https://www.tutorialspoint.com/go/go_operators.htm
+
+
+
