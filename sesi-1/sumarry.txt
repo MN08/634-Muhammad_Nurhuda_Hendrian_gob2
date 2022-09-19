@@ -1,68 +1,128 @@
 EARLY SETUP
 >tools
-    - install VSCODE (code editor) (https://code.visualstudio.com/download | link download , https://code.visualstudio.com/docs/setup/windows | link cara install)
-        ->install plugin "GO", "Prettier - Code Formatter"
-    - download Go ( https://go.dev/ )
+    -download vscode (https://code.visualstudio.com/download | link download)
+        ->install VSCODE (code editor) (https://code.visualstudio.com/docs/setup/windows | link cara install)
+        ->install extension "GO", "Prettier - Code Formatter" pada vscode
+    - download Go ( https://go.dev/dl/ )
         -> intall Go (https://go.dev/doc/install)
+        * lakukan command "go version" di terminal/cmd/powershell untuk mengetahui apakah go berhasil diinstall
 
 >Github (https://github.com/) (untuk penyimpanan data secara online)
     -> buat akun github
-        ->buat repository github (click new) (semua sesi 1 repo) contoh: repo golang -> sesi 1 - sesi 16
+        ->buat repository github (click new) (semua sesi diletakan pada 1 repo) contoh: repo golang -> sesi 1 - sesi 16
     * git push : untuk upload ke repository
       git pull : untuk download dari repository ke pc
 
 
-======================================================================================================================
-introduction to Golang
+===========================================================================
+Introducetion to Golang
+Go adalah sebuah bahasa pemrograman open-source yang dibuat di Google pada tahun 2007.
+kelebihan : Clean and Simple, Concurent
 
-use "Pacakge Main" is a must
+Syntax dasar:
+-------------
+package main
 
 import "fmt"
 
-create main func " func main(){}"
+func main(){
+
+}
+--------------
+basic commnad go
+ - go mod init <namaproject> //digunkana untuk menginisialisi go.mod (go module)
+ - go run <namafile> // digunakan untuk mengeksekusi file go agar dapat berjalan diterminal
+ - go build -o <namafileexecuteable> //digunakan untuk membuat file.exe dari file Go
 
 basic print command
-- fmt.Print("print )
-- fmt.Println("print") // create new line after string Print 
-- fmt.Println("print", "prints") // if more than one Println create space
+- fmt.Print("print")
+- fmt.Println("print") // Create new line in the end (like enter)
+- fmt.Println("print", "prints") // if more than one Println create space ex: print prints
 
 command commment
 - // single line commment
-- */ more than one line comment */
+- /* more than one line comment */
 
-
-variable dan type data
+---------------------
+VARIABLE
+---------------------
 variable = tempat untuk menampung data
 tipe data = timpe dari data yang disimpan dalam variable
     list tipe data dan fungsinya dapat dilihat di  : https://dasarpemrogramangolang.novalagung.com/A-tipe-data.html
 
-format membuat variable
-    - var namaVariable typedata
+variable with data type
+syntax:
+>   var namaVariable typedata
         contoh : var nama String
                  var umur int
+                 ~dengan value~
+                 var alamat string = "sleman"
+                 var kodePos int = 54321
 
-    pembuatan varibale
-     - var namaVariable  // harus diberi var
-        contoh : var name  
+    pembuatan varibale tanpa tipe data
+     - var namaVariable
+        contoh : var nama
+                 var umur
+                 ~dengan value~
+                 var alamat = "sleman"
+                 var kodePos = 54321
+                   
         - untuk mengetahui tipe data apa bisa print pakai "%T"
-            contoh : fmt.Print("%T", name) //akan menampilkan tipe data name ex: string
+            contoh : fmt.Printf("%T", name) //akan menampilkan tipe data name ex: string
+    == Short Declaration ==
+    menggunakan  ":="
      - namaVariable := value
         contoh : name := "nama kamu"
 
 
     multiple variable declaration
+    syntax:
     - var namaVariable1, namaVariable2, namaVariable3 tipedata = "value1", "value2", "value3"
         contoh : var nameOne, nameTwo, nameThree string = "name1", "name2", "name3"
-    -tanpa var
+     == Short Declaration ==
         - namaVariable1, namaVariable2, namaVariable3 tipedata := "value1", "value2", "value3"
         contoh : nameOne, nameTwo, nameThree string := "name1", "name2", "name3"
+        == Short Declaration without data type ==
+        - namaVariable1, namaVariable2, namaVariable3 := "value1", "value2", "value3"
+        contoh : nameOne, nameTwo, nameThree := "name1", "name2", "name3"
 
-DATA TYPE
+------------------------
+    underscore variable
+------------------------
+Bahasa Golang memiliki satu aturan yang cukup strict/ketat, yang dimana tidak ada variable yang boleh menganggur ketika sudah kita buat 
+agar tidak error bisa menggunakan underscore variable
+
+syntax:
+    _, _, _, ... ,_ = variable1, variable2,variable3, ... , variable n
+    *jumlah disesuaikan dengan banyak variable
+
+contoh : var variableBelumDipanggil Int
+         var var1, var2, var3 String = "satu" , "dua", "tiga"
+        //undescore variable
+        _, _, _, _ = variableBelumDipanggil, var1, var2, var3
+
+------------------------
+    penggunaan printf
+------------------------
+fmt.Printf("") digunakan untuk menampilkan beberapa tipedata dalam 1 print
+referensi
+https://pkg.go.dev/fmt
+
+
+------------------------
+    DATA TYPE
+------------------------
 Tipe data pada bahasa Go terbagi menjadi 4 kategori dengan detail seperti berikut ini:
 1.Basic Type: number, string, boolean.
+    number: terdiri dari int(bilangan bulat,(%T)),uint,float(bilangan pecahan,(%f))
+    boolean: tipe data ini digunakan untuk nilai bersifat "true" atau "false" , (%t)
+    string: tipe data untuk berupa karakter atau teks yang diapit oleh dua tanda kutip (" ") , (%s)
 2.Aggregate Type: array dan struct.
 3.Reference Type: slice, pointer, map, function, channel
 4.Interface Type: interface
+
+referensi
+https://dasarpemrogramangolang.novalagung.com/A-tipe-data.html
 
 constant
 Constant (const) atau Konstanta merupakan jenis variable pada bahasa Go yang nilainya tidak dapat diubah.
