@@ -37,4 +37,17 @@ func main() {
 	fmt.Printf("tipe data varibale first = %T", first, "\n")
 	fmt.Printf("tipe data varibale second = %T", second)
 
+	fmt.Println("=== Constanta ====\n")
+	const constanta_name string = "this is contanta value\n"
+	fmt.Println("print const", constanta_name)
+
+	fmt.Println("=== Operator ====\n")
+	fmt.Println("operator aritmatika")
+	var num int
+	num = 1 - 1 + 100
+	fmt.Println(num, "\n")
+
+	fmt.Println("operator Relational ")
+	var moreThan bool = 10 > 1
+	fmt.Println(moreThan)
 }
