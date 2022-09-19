@@ -1,6 +1,155 @@
 Kode Peserta	: 149368582101-634
 Nama			: Muhammad Nurhuda Hendrian
 Summary		    : 
+FUNDAMENTAL GO 
+----------------
+> Conditions
+ pada golang terdapat dua kondisi yaitu if dan switch
+    > if ( digunakan jika ingin mengeksekusi kode dengan 1 kondisi)
+        syntax:
+        if consitions{
+            // code to be executed if condition is true
+        }
+        example: 
+        var s = "Japan"
+	        x := true
+            if x {
+                fmt.Println(s)
+            }
+
+    > if else ( digunakan jika ingin mengeksekusi kode dengan 2 kondisi)
+        syntax:
+        if consition{
+            // code to be executed if condition is true
+        } else {
+            // code to be executed if condition 1 not true
+        }
+    > if else if ( digunakan jika ingin mengeksekui kode lebih dari 2 kondisi)
+        syntax:
+        if consition{
+                // code to be executed if condition is true
+        } esle if {
+                // code to be executed if condition 1 not true
+        } else if{
+                // code to be executed if condition 2 not true
+        } else {
+                // code to be executed if other condition not true
+        }
+        
+    > switch case ( serupa dengan if else namun memiliki keterbatasan dalam pengecekan data, hanya bisa karakter dan integer serta pengecekan yang berfokus pada 1 variable)
+        example 1: basic switch case
+        var point = 6
+
+        switch point {
+        case 8:
+            fmt.Println("perfect")
+        case 7:
+            fmt.Println("awesome")
+        default:
+            fmt.Println("not bad")
+        }
+
+        --------------------------
+        example 2: 1 case with more than 1 condition
+        var point = 6
+
+        switch point {
+        case 8:
+            fmt.Println("perfect")
+        case 7, 6, 5, 4:
+            fmt.Println("awesome")
+        default:
+            fmt.Println("not bad")
+        }
+        
+        --------------------------
+        example 3: Switch with relational operators
+
+        var point = 6
+
+        switch {
+        case point == 8:
+            fmt.Println("perfect")
+        case (point < 8) && (point > 3):
+            fmt.Println("awesome")
+        default:
+            {
+                fmt.Println("not bad")
+                fmt.Println("you need to learn more")
+            }
+        }
+
+        --------------------------
+        example 4: Switch (fallthrough keyword) -> digunakan agar pengecekan dilanjutkan ke 1 case setelahnya dan mungkin bisa benar atau dibenarkan.
+        var point = 6
+
+        switch {
+        case point == 8:
+            fmt.Println("perfect")
+        case (point < 8) && (point > 3):
+            fmt.Println("awesome")
+            fallthrough
+        case point < 5:
+            fmt.Println("you need to learn more")
+        default:
+            {
+                fmt.Println("not bad")
+                fmt.Println("you need to learn more")
+            }
+        }
+
+        ----------------------------------
+        conditional nested (conditional inside conditional)
+        example:
+        var point = 10
+
+        if point > 7 {
+            switch point {
+            case 10:
+                fmt.Println("perfect!")
+            default:
+                fmt.Println("nice!")
+            }
+        } else {
+            if point == 5 {
+                fmt.Println("not bad")
+            } else if point == 3 {
+                fmt.Println("keep trying")
+            } else {
+                fmt.Println("you can do it")
+                if point == 0 {
+                    fmt.Println("try harder!")
+                }
+            }
+        }
+
+> Looping
+    - proses mengulang-ulang eksekusi blok kode tanpa henti, selama kondisi yang dijadikan acuan terpenuhi
+    >for | Loopings (first way of looping)
+    example: 
+    for i := 0; i < 5; i++ {
+        fmt.Println("Angka", i)
+    }
+    > for | Loopings (second way of looping) 
+    for i < 5 {
+        fmt.Println("Angka", i)
+        i++
+    }
+    > for | Loopings (third way of looping)
+    var i = 0
+
+    for {
+        fmt.Println("Angka", i)
+
+        i++
+        if i == 5 {
+            break
+        }
+    }
+
+    >Loopings (break and continue keywords)
+
+
 Tugas			: .......
 Assignment  	: .......
 github			: https://github.com/MN08/learn-golang.git
