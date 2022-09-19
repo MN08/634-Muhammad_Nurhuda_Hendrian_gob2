@@ -1,3 +1,6 @@
+Kode Peserta	: 149368582101-634
+Nama			: Muhammad Nurhuda Hendrian
+Summary		: 
 EARLY SETUP
 >tools
     -download vscode (https://code.visualstudio.com/download | link download)
@@ -140,5 +143,6 @@ https://www.tutorialspoint.com/go/go_operators.htm
 Logical Operators
 https://www.tutorialspoint.com/go/go_operators.htm
 
-
-
+Tugas					: .......
+Assignment 1	: .......
+github				: https://github.com/MN08/learn-golang.git
