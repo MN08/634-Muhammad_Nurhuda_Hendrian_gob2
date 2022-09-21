@@ -54,8 +54,8 @@ func main() {
 		fmt.Println()
 	}
 
-	fmt.Print("\n------------------------\n")
 	//labeling nested loop
+	fmt.Print("\n------------------------\n")
 outerLoop:
 	for i := 0; i < 5; i++ {
 		fmt.Print("\nperulangan i ke- [", i, "]", "\n")

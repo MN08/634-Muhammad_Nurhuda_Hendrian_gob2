@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 func main() {
 	fmt.Print("ARRAY")
@@ -17,6 +20,21 @@ func main() {
 	var arr2 [2]float32
 	arr2 = [2]float32{1.2, 2.3}
 	fmt.Printf("\n\n%#v \n", arr2)
+
+	// Array(Loop through elements)
+	fmt.Print("\n------------------------\n")
+
+	var buah = [3]string{"appel", "banana", "mango"}
+	for i, v := range buah {
+		fmt.Printf("index: %d, value: %s\n", i, v)
+	}
+
+	fmt.Println(strings.Repeat("#", 25))
+
+	//atau
+	for i := 0; i < len(buah); i++ {
+		fmt.Printf("index: %d, value: %s\n", i, buah[i])
+	}
 
 	//declare array without jumlahdata
 	var numbers = [...]int{1, 3, 5, 6, 7, 8, 9, 12, 13}
@@ -37,6 +55,15 @@ func main() {
 	}
 
 	//array multidimensional
+	fmt.Print("\n------------------------\n")
+	balances := [2][3]int{{5, 6, 7}, {8, 9, 10}}
+	for _, arr := range balances {
+		for _, value := range arr {
+			fmt.Printf("%d", value)
+		}
+		fmt.Println()
+	}
+
 	fmt.Print("\n------------------------\n")
 	var numbers1 = [2][3]int{{3, 2, 3}, {3, 4, 5}}
 	var numbers2 = [2][3]int{{3, 2, 3}, {3, 4, 5}}

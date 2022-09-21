@@ -1,6 +1,7 @@
 Kode Peserta	: 149368582101-634
 Nama			: Muhammad Nurhuda Hendrian
 Summary		    : 
+21/09/2022
 FUNDAMENTAL GO 
 ----------------
 > Conditions
@@ -171,9 +172,23 @@ FUNDAMENTAL GO
     Slice adalah reference elemen array. Slice bisa dibuat, atau bisa juga dihasilkan dari manipulasi sebuah array ataupun slice lainnya. Karena merupakan data reference, menjadikan perubahan data di tiap elemen slice akan berdampak pada slice lain yang memiliki alamat memori yang sama.
 
     Cara pembuatan slice mirip seperti pembuatan array, bedanya tidak perlu mendefinisikan jumlah elemen ketika awal deklarasi. Pengaksesan nilai elemen-nya juga sama
+    contoh:
     var fruits = []string{"apple", "grape", "banana", "melon"}
     fmt.Println(fruits[0]) // "apple"
 
+> MAP
+    Map adalah tipe data asosiatif yang ada di Go, berbentuk key-value pair. Untuk setiap data (atau value) yang disimpan, disiapkan juga key-nya. 
+    Key harus unik, karena digunakan sebagai penanda (atau identifier) untuk pengaksesan value yang bersangkutan.
+
+> Alise
+    Aliase merupakan sebuah fitu pada bahasa Go yang digunakan sebagai nama alternative dari tipe data yangsudah ada.
+    Tipe data dengan nama yang berbeda memiliki arti bahwa tipe data nya juga berbeda, tetapi terdapatpengecualian terhadap aliase.
+    Tipe data byte merupakan tipe data aliase dari tipe data uint8, yang berarti mereka merupakan tipe data yangsama dengan nama yang berbda.
+    Tipe data rune merupakan tipe data aliase dari tipe data uint32, yang berarti mereka merupakan tipe data yangsama dengan nama yang berbda.
+    syntax untuk buat aiase tipe data | type nama_alias = nama_tipe_data
+    ex: type sleman = string
+    var kabupaten sleman = "sleman"
+
 Tugas			: .......
 Assignment  	: .......
-github			: https://github.com/MN08/learn-golang.git
+github			: https://github.com/MN08/634-Muhammad_Nurhuda_Hendrian_gob2.git
