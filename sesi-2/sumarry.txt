@@ -148,7 +148,31 @@ FUNDAMENTAL GO
     }
 
     >Loopings (break and continue keywords)
+    continue digunakan untuk menlanjutkan perulangan jika suatu kondisi terpenuhui
+    break digunakan untuk menghentikan perulangan jikan suatu kondisi sudah terpenuhi
 
+    >nested Looping
+    dimana terdapat perulangan didalam perulangan umumnya digunakan jika data dua dimensi atau lebih
+
+
+> ARRAY
+    array adalah sebuah kumpulan data yang disatukan di sebuah wadah, namun array hanya bisa digunakan untuk yangbertipe data selama
+    array meenggunakan index sebagai acuan tiap data didalamnya yang dimulai dari index ke 0
+    array pada bahasa Go memiliki sifat fixed-length atau memiliki panjang yang tetap yang harus kita tentukan dari awal kita membuat arraynya.
+    namun bisa diakali dengan menggunakan [...]
+
+    syntax: namaArray [jumlahData]tipedata
+    contoh deklarasi array
+    var arr [2]int | disini bisa diketahui bahwa array arr memiliki 2 value yang bertipe int
+    var arr [2]int = [2,1]]
+    var arr [2]string = ['abc','bca']
+
+> SLICE
+    Slice adalah reference elemen array. Slice bisa dibuat, atau bisa juga dihasilkan dari manipulasi sebuah array ataupun slice lainnya. Karena merupakan data reference, menjadikan perubahan data di tiap elemen slice akan berdampak pada slice lain yang memiliki alamat memori yang sama.
+
+    Cara pembuatan slice mirip seperti pembuatan array, bedanya tidak perlu mendefinisikan jumlah elemen ketika awal deklarasi. Pengaksesan nilai elemen-nya juga sama
+    var fruits = []string{"apple", "grape", "banana", "melon"}
+    fmt.Println(fruits[0]) // "apple"
 
 Tugas			: .......
 Assignment  	: .......
