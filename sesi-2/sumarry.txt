@@ -188,6 +188,11 @@ FUNDAMENTAL GO
     syntax untuk buat aiase tipe data | type nama_alias = nama_tipe_data
     ex: type sleman = string
     var kabupaten sleman = "sleman"
+    
+> String In Depth
+    Tipe data string pada Go terbentuk dari kumpulan tipe data byte yang di letakkan di dalam slice atau bisa kita sebutdengan slice of bytes.
+    Tipe data byte pada Go merupakan tipe data alias dari tipe data uint8.
+    Ketika kita melakukan indexing terhadap suatu string, maka kita akan mendapat nilai representasi dari byte nya.
 
 Tugas			: .......
 Assignment  	: .......
