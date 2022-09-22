@@ -1,6 +1,0 @@
-Kode Peserta	: 149368582101-634
-Nama			: Muhammad Nurhuda Hendrian
-Summary		    : 
-Tugas			: .......
-Assignment  	: .......
-github			: https://github.com/MN08/learn-golang.git

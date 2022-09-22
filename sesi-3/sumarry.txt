@@ -1,6 +1,22 @@
 Kode Peserta	: 149368582101-634
 Nama			: Muhammad Nurhuda Hendrian
 Summary		    : 
+ Function, Method, Pointer, Struct & Exported-Unexported
+ -----------------------------------------------------------
+ > Function
+    Fungsi merupakan aspek penting dalam pemrograman. Definisi fungsi sendiri adalah sekumpulan blok kode yang dibungkus dengan nama tertentu. Penerapan fungsi yang tepat akan menjadikan kode lebih modular dan juga dry (kependekan dari don't repeat yourself), tak perlu menuliskan banyak kode yang kegunaannya berkali-kali, cukup sekali saja lalu panggil sesuai kebutuhan.
+   syntax:  func namaFunction (parameter1 tipedata ,parameter2 tipedata ){} // parameter bisa berapapun
+   contoh : func welcome (name string, greet string){}
+    
+
+ > Closure
+   Definisi Closure adalah sebuah fungsi yang bisa disimpan dalam variabel. Dengan menerapkan konsep tersebut, kita bisa membuat fungsi di dalam fungsi, atau bahkan membuat fungsi yang mengembalikan fungsi.
+
+   Closure merupakan anonymous function atau fungsi tanpa nama. Biasa dimanfaatkan untuk membungkus suatu proses yang hanya dipakai sekali atau dipakai pada blok tertentu saja.
+   
+ > Pointer
+ > Struct
+ > Exported-Unexported
 Tugas			: .......
 Assignment  	: .......
-github			: https://github.com/MN08/learn-golang.git
+github			: https://github.com/MN08/634-Muhammad_Nurhuda_Hendrian_gob2.git
