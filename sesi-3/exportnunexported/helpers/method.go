@@ -1,5 +1,5 @@
 package helpers
 
-func (p Person) invokeGreet() {
+func (p Person) Invokegreet() {
 	greet()
 }

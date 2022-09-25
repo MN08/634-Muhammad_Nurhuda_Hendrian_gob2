@@ -23,18 +23,18 @@ func main() {
 	fmt.Println(printMsg)
 
 	// Function (Returning multiple values)
-	var diameters float64 = 15
-	var area, circumference = calculate(diameters)
+	var diameter float64 = 15
+	var area, circumference = calculate(diameter)
 	fmt.Print("\n------------------------\n")
 	fmt.Println("area : ", area)
 	fmt.Println("circumference : ", circumference)
 
 	//Function (Predefined return value)
-	var diameter float64 = 15
-	var areas, circumferences = calculates(diameter)
+	var diameters float64 = 15
+	var areas, circumferences = calculates(diameters)
 	fmt.Print("\n------------------------\n")
-	fmt.Println("area : ", areas)
-	fmt.Println("circumference : ", circumferences)
+	fmt.Println("areas : ", areas)
+	fmt.Println("circumferences : ", circumferences)
 	fmt.Print("\n------------------------\n")
 
 	// Function (Variadic function #1)
