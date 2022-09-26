@@ -8,27 +8,31 @@ import (
 )
 
 func main() {
-
+	//check if command line arguments available < 2 (only 1 argument)
 	if len(os.Args) < 2 {
 		fmt.Println("error : index student needed")
 		return
 	}
-	//mengambil 1 data pada array argsRaw
+	//mengambil 1 argument
 	args := os.Args[1]
-	argsi, err := strconv.Atoi(args)
-	_ = err
+	// karna os.Args hanya menyimpan array string dan input berupa int, maka kita convert no to int
+	//strconv membutuhkan 2 parameter, variable untuk menyimpan hasil, serta error value, disini err diset menjadi nil
+	argsi, errs := strconv.Atoi(args)
+	_ = errs
+
+	// send argsi to getBioByIndex function
 	searchBiodataNumber, err := getBioByIndex(argsi)
 	if err != nil {
-		// show the error if from getStudentByIndex return error
+		// show the error if from getBioByIndex return error
 		fmt.Println("error : ", err.Error())
 		return
 	} else {
+		// if not error show the data
 		fmt.Println("No :", searchBiodataNumber.no)
 		fmt.Println("Nama:", searchBiodataNumber.name)
 		fmt.Println("Alamat:", searchBiodataNumber.address)
 		fmt.Println("Pekerjaan:", searchBiodataNumber.job)
 		fmt.Println("Alasan:", searchBiodataNumber.motivation)
-		// perhitungan index dimulai dari 0 sehingga untuk menyesuaikan urutan dilakukan -1
 		fmt.Println("=============================================")
 	}
 
@@ -44,6 +48,7 @@ type Biodata struct {
 }
 
 // construct data and use slice with pointer data to easily get the null / exist data
+// use of pointer because cannot return nil from a function that returns a string
 func getBioData() []*Biodata {
 	return []*Biodata{
 		{
@@ -76,17 +81,21 @@ func getBioData() []*Biodata {
 	}
 }
 
+// func getBioByIndex to find the bio
 func getBioByIndex(num int) (*Biodata, error) {
-
+	// get all data in GetBioData
 	bioData := getBioData()
-	// fmt.Println("data type : ", reflect.ValueOf(bioData).Kind())
+
 	totalData := len(bioData)
+
 	if num < totalData {
+		// find biodata we want to found
 		searchBiodataNumber := bioData[num-1]
 
+		// if data not found
 		if searchBiodataNumber == nil {
 			return nil, errors.New("Data Not Found")
-		} else {
+		} else { //if data found
 			return searchBiodataNumber, nil
 		}
 	} else {
