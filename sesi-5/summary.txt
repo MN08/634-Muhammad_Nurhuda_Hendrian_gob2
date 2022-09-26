@@ -1,0 +1,20 @@
+Kode Peserta : 149368582101-634
+Nama   : Muhammad Nurhuda Hendrian
+Summary      :
+ Channels, Defer, Exit & Error Handling
+ -----------------------------------------------------------
+ > Channels
+    Channel digunakan untuk menghubungkan goroutine satu dengan goroutine lain. Mekanisme yang dilakukan adalah serah-terima data lewat channel tersebut. Dalam komunikasinya, sebuah channel difungsikan sebagai pengirim di sebuah goroutine, dan juga sebagai penerima di goroutine lainnya. Pengiriman dan penerimaan data pada channel bersifat blocking atau synchronous.
+
+    Channel merupakan sebuah variabel, dibuat dengan menggunakan kombinasi keyword make dan chan. Variabel channel memiliki satu tugas, menjadi pengirim, atau penerima data.
+    
+ > Defer 
+    
+ > Exit
+    
+ > Error Handling
+
+
+Tugas   : .......
+Assignment   : 
+github   : https://github.com/MN08/634-Muhammad_Nurhuda_Hendrian_gob2.git
