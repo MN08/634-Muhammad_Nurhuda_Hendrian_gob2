@@ -1,7 +1,9 @@
 ## Biodata 
->quote Kode Peserta	: 149368582101-634
->quote Nama   : Muhammad Nurhuda Hendrian
->quote Link Github  : <https://github.com/MN08/634-Muhammad_Nurhuda_Hendrian_gob2.git/assignment/assign-1>
+> Kode Peserta	: 149368582101-634
+
+> Nama   : Muhammad Nurhuda Hendrian
+
+> Link Github  : <https://github.com/MN08/634-Muhammad_Nurhuda_Hendrian_gob2.git/assignment/assign-1>
 
 ### Paduan running program: 
 1. download, copy atau clone repository github.com/MN08/634-Muhammad_Nurhuda_Hendrian_gob2
