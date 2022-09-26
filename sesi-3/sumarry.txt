@@ -39,5 +39,5 @@ Summary		    :
   Di Go sebenarnya tidak ada istilah public modifier dan private modifier. Yang ada adalah exported yang kalau di bahasa lain ekuivalen dengan public modifier, dan unexported untuk private modifier.
 
 Tugas			: .......
-Assignment  	: .......
+Assignment  	: https://github.com/MN08/634-Muhammad_Nurhuda_Hendrian_gob2/tree/master/assignment/assign-1
 github			: https://github.com/MN08/634-Muhammad_Nurhuda_Hendrian_gob2.git
