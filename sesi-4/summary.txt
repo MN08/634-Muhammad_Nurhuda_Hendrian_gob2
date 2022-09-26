@@ -37,6 +37,12 @@ Summary      :
     Goroutine merupakan salah satu bagian paling penting dalam concurrent programming di Go. Salah satu yang membuat goroutine sangat istimewa adalah eksekusi-nya dijalankan di multi core processor. Kita bisa tentukan berapa banyak core yang aktif, makin banyak akan makin cepat.
 
  > Wait Group
+    Waitgroup merupakan sebuah struct dari package sync, yang digunakan untuk melakukan sinkronisasi terhadap goroutine.Pada materi sebelumnya pada materi go routine, kita perlu menahan function main agar dapat menunggu go routine menyelesaikan prosesnya dengan menggunkan function Sleep dari package time. Cara inibukan merupakan cara yang baik untuk menunggu go routine menyelesaikan prosesnya.
+
+    Go menyediakan package sync, berisi cukup banyak API untuk handle masalah multiprocessing (goroutine), salah satunya di antaranya adalah yang kita bahas pada chapter ini, yaitu sync.WaitGroup.
+
+   Kegunaan sync.WaitGroup adalah untuk sinkronisasi goroutine. Berbeda dengan channel, sync.WaitGroup memang dirancang khusus untuk maintain goroutine
+
 
 Tugas   : .......
 Assignment   : 

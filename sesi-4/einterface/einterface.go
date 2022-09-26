@@ -22,7 +22,7 @@ func main() {
 	v = 20
 	// v = v * 9  error karna interface tuidak bisa dikali in
 
-	if values, oke := v.(int); ok == true {
+	if values, oke := v.(int); oke == true {
 		v = values * 9
 	}
 
@@ -30,11 +30,11 @@ func main() {
 	fmt.Print("\n\n------------------------\n")
 	rs := []interface{}{1, "ariel", true, 2, "noah", true}
 
-	rm := map[string]interface{
-		"name": "aril"
-		"status": true
-		"number": 3
+	rm := map[string]interface{}{
+		"name":   "aril",
+		"status": true,
+		"number": 3,
 	}
 
-	_,_ =rs,rm
+	_, _ = rs, rm
 }
