@@ -10,8 +10,10 @@
     * kemudian masuk ke folder assignment -> assign-1 -> biodata
     * buka file bio.go di text editor yang anda gunakan
 
-2. kemudian lakukan perintah go run bio.go <angka>
+2. kemudian lakukan perintah go run bio.go [angka]
+3. 
     contoh : 
+    
     `go run bio.go 3`
 
     jika melihat data dari kode program maka jika contoh dijalankan akan menghasilkan output:
