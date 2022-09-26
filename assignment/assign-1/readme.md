@@ -16,9 +16,9 @@
     `go run bio.go 3`
 
     jika melihat data dari kode program maka jika contoh dijalankan akan menghasilkan output:
-    
-    No : 3
-    Nama: Albertus
-    Alamat: Batu
-    Pekerjaan: Developer
-    Alasan: untuk bisa Ngoding bahasa go dengan baik
+
+    * No : 3
+    * Nama: Albertus
+    * Alamat: Batu
+    * Pekerjaan: Developer
+    * Alasan: untuk bisa Ngoding bahasa go dengan baik
