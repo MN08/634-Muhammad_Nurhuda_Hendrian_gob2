@@ -8,12 +8,23 @@ Summary      :
 
     Channel merupakan sebuah variabel, dibuat dengan menggunakan kombinasi keyword make dan chan. Variabel channel memiliki satu tugas, menjadi pengirim, atau penerima data.
     
- > Defer 
+ > Defer  n Exit
+    Defer digunakan untuk mengakhirkan eksekusi sebuah statement tepat sebelum blok fungsi selesai. Sedangkan Exit digunakan untuk menghentikan program secara paksa (ingat, menghentikan program, tidak seperti return yang hanya menghentikan blok kode)
     
- > Exit
-    
- > Error Handling
+ > Error
+   error merupakan sebuah tipe. Error memiliki 1 buah property berupa method Error(), method ini mengembalikan detail pesan error dalam string. Error termasuk tipe yang isinya bisa nil.
 
+   Di Go, banyak sekali fungsi yang mengembalikan nilai balik lebih dari satu. Biasanya, salah satu kembalian adalah bertipe error. Contohnya seperti pada fungsi strconv.Atoi(). Fungsi tersebut digunakan untuk konversi data string menjadi numerik. Fungsi ini mengembalikan 2 nilai balik. Nilai balik pertama adalah hasil konversi, dan nilai balik kedua adalah error. Ketika konversi berjalan mulus, nilai balik kedua akan bernilai nil. Sedangkan ketika konversi gagal, penyebabnya bisa langsung diketahui dari error yang dikembalikan.
+
+> Panic
+   Panic digunakan untuk menampilkan stack trace error sekaligus menghentikan flow goroutine (karena main() juga merupakan goroutine, maka behaviour yang sama juga berlaku). Setelah ada panic, proses akan terhenti, apapun setelah tidak di-eksekusi kecuali proses yang sudah di-defer sebelumnya (akan muncul sebelum panic error).
+
+   Panic menampilkan pesan error di console, sama seperti fmt.Println(). Informasi error yang ditampilkan adalah stack trace error, jadi sangat mendetail dan heboh.
+
+> Recover
+   Recover berguna untuk meng-handle panic error. Pada saat panic error muncul, recover men-take-over goroutine yang sedang panic (pesan panic tidak akan muncul).
+
+   Ok, mari kita modifikasi sedikit fungsi di-atas untuk mempraktekkan bagaimana cara penggunaan recover. Tambahkan fungsi catch(), dalam fungsi ini terdapat statement recover() yang dia akan mengembalikan pesan panic error yang seharusnya muncul.
 
 Tugas   : .......
 Assignment   : 
