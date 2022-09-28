@@ -1,0 +1,20 @@
+Kode Peserta : 149368582101-634
+Nama   : Muhammad Nurhuda Hendrian
+Summary      :
+ Database & Gorm
+ -----------------------------------------------------------
+ > Database
+  Go menyediakan package net/http, berisi berbagai macam fitur untuk keperluan pembuatan aplikasi berbasis web. Termasuk di dalamnya web server, routing, templating, dan lainnya.
+
+  Go memiliki web server sendiri, dan web server tersebut berada di dalam Go, tidak seperti bahasa lain yang servernya terpisah dan perlu diinstal sendiri (seperti PHP yang memerlukan Apache, .NET yang memerlukan IIS).
+
+> Gorm
+  Sama seperti bahasa pemrograman lainnya, ada banyak library dan framework yang siap pakai. Ada framework yang sifatnya sudah komplit, lengkap isinya dari ujung ke ujung, mulai dari setup project hingga testing dan build/deployment sudah ada semua tooling-nya. Ada juga framework yg scope-nya lebih spesifik (biasa disebut library), seperti lib untuk mempermudah operasi di data layer, lib untuk routing, dan lainnya.
+>Gin Framework Golang
+Gin is a web framework written in Golang.
+
+It features a Martini-like API, but with performance up to 40 times faster than Martini.
+
+Tugas   : .......
+Assignment   : 
+github   : https://github.com/MN08/634-Muhammad_Nurhuda_Hendrian_gob2.git
