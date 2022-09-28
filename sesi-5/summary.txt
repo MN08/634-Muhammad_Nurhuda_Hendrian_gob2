@@ -24,7 +24,6 @@ Summary      :
 > Recover
    Recover berguna untuk meng-handle panic error. Pada saat panic error muncul, recover men-take-over goroutine yang sedang panic (pesan panic tidak akan muncul).
 
-   Ok, mari kita modifikasi sedikit fungsi di-atas untuk mempraktekkan bagaimana cara penggunaan recover. Tambahkan fungsi catch(), dalam fungsi ini terdapat statement recover() yang dia akan mengembalikan pesan panic error yang seharusnya muncul.
 
 Tugas   : .......
 Assignment   : 
