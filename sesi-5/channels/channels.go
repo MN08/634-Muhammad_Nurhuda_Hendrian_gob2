@@ -16,7 +16,7 @@ func main() {
 	// result := <-c
 
 	// Channels (Implementing channel)
-	fmt.Print("\n------------------------\n")
+	fmt.Print("\n-----------Implementing channel-------------\n")
 	go introduce("Gokuu", c)
 	go introduce("Gohan", c)
 	go introduce("Goten", c)
@@ -31,7 +31,7 @@ func main() {
 	fmt.Println(msg3)
 
 	// Channels (Channel with anonymous function)
-	fmt.Print("\n\n------------------------\n")
+	fmt.Print("\n\n-----------Channel with anonymous function-------------\n")
 	ch := make(chan string)
 
 	students := []string{"Gogeta", "Gotunk", "Vegoku"}
@@ -50,7 +50,7 @@ func main() {
 	close(ch)
 
 	//Channels (Channel directions)
-	fmt.Print("\n\n------------------------\n")
+	fmt.Print("\n\n-----------Channel directions-------------\n")
 	cha := make(chan string)
 
 	studentss := []string{"Gogeta", "Gotunk", "Vegoku"}
@@ -105,7 +105,7 @@ func main() {
 	}
 
 	// Channel (Select)
-	fmt.Print("\n\n------------------------\n")
+	fmt.Print("\n\n------------Select------------\n")
 	ch3 := make(chan string)
 	ch4 := make(chan string)
 
