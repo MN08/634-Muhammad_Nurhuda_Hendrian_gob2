@@ -87,6 +87,18 @@ func GetCar(ctx *gin.Context) {
 	})
 }
 
+func GetAllCar(ctx *gin.Context) {
+	var carData Car
+
+	for i := range carDatas {
+		carData = carDatas[i]
+
+		ctx.JSON(http.StatusOK, gin.H{
+			"car": carData,
+		})
+	}
+}
+
 func DeleteCar(ctx *gin.Context) {
 	carId := ctx.Param("carId")
 	condition := false

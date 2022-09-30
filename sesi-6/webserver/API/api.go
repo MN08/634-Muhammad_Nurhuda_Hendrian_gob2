@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"net/http"
 	"strconv"
-	"text/template"
 )
 
 type Employee struct {
@@ -36,13 +35,15 @@ func getEmployees(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 
 	if r.Method == "GET" {
-		tpl, err := template.ParseFiles("index.html")
+		json.NewEncoder(w).Encode(employees)
+		//send data to html
+		// tpl, err := template.ParseFiles("index.html")
 
-		if err != nil {
-			http.Error(w, err.Error(), http.StatusInternalServerError)
-			return
-		}
-		tpl.Execute(w, employees)
+		// if err != nil {
+		// 	http.Error(w, err.Error(), http.StatusInternalServerError)
+		// 	return
+		// }
+		// tpl.Execute(w, employees)
 		return
 	}
 
