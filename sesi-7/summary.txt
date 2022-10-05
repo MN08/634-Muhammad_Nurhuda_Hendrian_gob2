@@ -7,6 +7,9 @@ Summary      :
   Go menyediakan package net/http, berisi berbagai macam fitur untuk keperluan pembuatan aplikasi berbasis web. Termasuk di dalamnya web server, routing, templating, dan lainnya.
 
   Go memiliki web server sendiri, dan web server tersebut berada di dalam Go, tidak seperti bahasa lain yang servernya terpisah dan perlu diinstal sendiri (seperti PHP yang memerlukan Apache, .NET yang memerlukan IIS).
+  
+  #postgreSql
+  PostgreSQL adalah database yang banyak digunakan pada web app, aplikasi mobile, dan aplikasi analytics. Itulah kenapa aplikasi yang membutuhkan pengolahan data yang lebih kompleks akan lebih cocok menggunakan postgreSQL.
 
 > Gorm
   Sama seperti bahasa pemrograman lainnya, ada banyak library dan framework yang siap pakai. Ada framework yang sifatnya sudah komplit, lengkap isinya dari ujung ke ujung, mulai dari setup project hingga testing dan build/deployment sudah ada semua tooling-nya. Ada juga framework yg scope-nya lebih spesifik (biasa disebut library), seperti lib untuk mempermudah operasi di data layer, lib untuk routing, dan lainnya.
