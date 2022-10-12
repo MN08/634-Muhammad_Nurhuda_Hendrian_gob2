@@ -117,7 +117,7 @@ func UpdateEmployees() {
 func DeleteEmployees() {
 	sqlStatement := `DELETE FROM employees WHERE employee_id = $1`
 
-	res, err := db.Exec(sqlStatement, 3)
+	res, err := db.Exec(sqlStatement, 2)
 	if err != nil {
 		panic(err)
 	}

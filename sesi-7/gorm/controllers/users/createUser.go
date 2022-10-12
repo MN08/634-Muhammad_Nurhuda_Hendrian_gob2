@@ -8,14 +8,14 @@ import (
 
 func CreateUser(email string) {
 	db := databases.GetDB()
-
+	fmt.Println(db)
 	User := models.User{
 		Email: email,
 	}
 
 	err := db.Create(&User).Error
 	if err != nil {
-		fmt.Println("Error creating user data:",err)
+		fmt.Println("Error creating user data:", err)
 		return
 	}
 
