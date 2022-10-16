@@ -1,35 +1,22 @@
-package databases
+package database
 
 import (
 	"fgd-golang/assignment/assign-2/models"
 	"fmt"
-	"log"
 
-	"gorm.io/driver/postgres"
-	"gorm.io/gorm"
+	_ "github.com/go-sql-driver/mysql"
+	"github.com/jinzhu/gorm"
 )
 
-var (
-	host     = "localhost"
-	port     = 5432
-	user     = "postgres"
-	password = "postgres"
-	dbname   = "assign-order"
-	db       *gorm.DB
-	err      error
-)
-
-func StartDb() {
-	config := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable", host, port, user, password, dbname)
-
-	db, err = gorm.Open(postgres.Open(config), &gorm.Config{})
+func StartDb() *gorm.DB {
+	dsn := "root:@tcp(127.0.0.1:3306)/assign-order?charset=utf8&parseTime=True&loc=Local"
+	db, err := gorm.Open("mysql", dsn)
 	if err != nil {
-		log.Fatal("error connection to database:", err)
+		panic(err)
 	}
 
-	db.Debug().AutoMigrate(models.Item{}, models.Order{})
-}
+	fmt.Println("Connected")
 
-func GetDB() *gorm.DB {
+	db.AutoMigrate(models.Item{}, models.Order{})
 	return db
 }

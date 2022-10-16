@@ -1,8 +1,9 @@
 package main
 
-import "fgd-golang/sesi-10/go-jwt/database"
+import (
+	route "fgd-golang/assignment/assign-2/routes"
+)
 
 func main() {
-	database.StartDb()
-
+	route.StartServer()
 }
