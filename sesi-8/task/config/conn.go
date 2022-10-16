@@ -4,13 +4,15 @@ import (
 	"fgd-golang/sesi-8/task/models"
 	"fmt"
 
+	_ "github.com/go-sql-driver/mysql"
 	"github.com/jinzhu/gorm"
 )
 
 func DBInit() *gorm.DB {
-	db, err := gorm.Open("mysql", "root:mysql@123@tcp(127.0.0.1:3306)/godb?charset=utf8&parseTime=True&loc=Local")
+	dsn := "root:@tcp(127.0.0.1:3306)/godb?charset=utf8&parseTime=True&loc=Local"
+	db, err := gorm.Open("mysql", dsn)
 	if err != nil {
-		panic("failed to conenct to database")
+		panic(err)
 	}
 
 	fmt.Println("Connected")
