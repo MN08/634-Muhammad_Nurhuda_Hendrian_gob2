@@ -1,0 +1,64 @@
+* {
+  box-sizing: border-box;
+}
+
+/* Style the body */
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 0;
+}
+
+ul li {
+  display: inline;
+}
+
+aside {
+  flex: 30%;
+  background-color: #fff;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+
+  text-align: left;
+}
+aside h2{
+  margin-left: 50px;
+}
+aside h5 {
+  margin-left: 50px;
+}
+
+aside .socmed li {
+  margin-top: 30px;
+}
+
+aside p {
+  padding: 35px;
+  color: #000;
+  border-radius: 12px;
+  text-decoration: none;
+}
+
+aside .socmed li a{
+  padding: 5px;
+  color: #000;
+  border: 2px solid #005555;
+  border-radius: 12px;
+  text-decoration: none;
+  justify-content: center;
+}
+
+aside .socmed li a:hover {
+  background-color: #005555;
+  color: #fff;
+  border: 2px solid #fff;
+}
+/* Footer */
+footer {
+  padding: 10px;
+  text-align: center;
+  background: #1D5C63;
+
+  font-weight: bold;
+  color: #fff;
+}

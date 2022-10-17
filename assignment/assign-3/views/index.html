@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>weather</title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-12">
+                <h1 class="d-flex justify-content-center">Weather Details</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-5">
+                <aside>
+                    <h2>About Me</h2>
+                    <p>
+                        Perkenalkan Nama saya Muhammad Nurhuda Hendrian. Saya merupakan fresh graduate dari Universitas Amikom
+                        Yogyakarta dengan program studi Informatika. saat ini saya tengah mengikuti program FGA GOLANG.
+                    </p>
+                    <ul style="list-style-type: none;" class="socmed">
+                        <li>
+                            <a href="https://www.linkedin.com/in/muhammad-nurhuda-hendrian-70887191/" target="__blank"
+                                rel="noopener norefferer">Linkedin</a>
+                        </li>
+                        <li>
+                            <a href="https://steamcommunity.com/profiles/76561198262995306" target="__blank"
+                                rel="noopener norefferer">Steam</a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/MN08/634-Muhammad_Nurhuda_Hendrian_gob2" target="__blank"
+                                rel="noopener norefferer">Gituhub</a>
+                        </li>
+                    </ul>
+                </aside>
+            </div>
+            <div class="col-7">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col" style=" text-align: center;">Water Status</th>
+                            <th scope="col" style=" text-align: center;">Wind Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style=" text-align: center;"><h2 id="water">-</h2></td>
+                            <td style=" text-align: center;"><h2 id="wind">-</h2></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+<div class="row">
+    <footer class="col-12">
+        <p>&copy; 2022 <a href="https://www.linkedin.com/in/muhammad-nurhuda-hendrian-70887191/" target="__blank"
+                rel="noopener norefferer" style="text-decoration: none; color: white;">Muhammad Nurhuda Hendrian</a></p>
+    </footer>
+</div>
+   
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+    <!-- get api -->
+    <script>
+        const url = "http://127.0.0.1:8080/stat/latest"
+
+        async function get_data(a) {
+            const response = await fetch(a)
+            var data = await response.json()
+            var water = data["status"]["water"]
+            var wind = data["status"]["wind"]
+            var waterStat = data["waterStat"]
+            var windStat = data["windStat"]
+
+            document.getElementById("water").innerHTML = water;
+            document.getElementById("wind").innerHTML = wind;
+            // document.getElementById("waterStat").innerHTML = waterStatus;
+            // document.getElementById("windStat").innerHTML = windStatus;
+
+            if (waterStat === "Bahaya") {
+                document.getElementById('water').style.backgroundColor = '#e60e0e';
+            } else if (waterStat == "Siaga"){
+                document.getElementById('water').style.backgroundColor = '#d4c208';
+            } else if(waterStat == "Aman") {
+                document.getElementById('water').style.backgroundColor = '#30b005';
+            }
+             
+             if (windStat == "Bahaya") {
+                document.getElementById('wind').style.backgroundColor = '#e60e0e';
+            } else if (windStat == "Siaga") {
+                document.getElementById('wind').style.backgroundColor = '#d4c208';
+            } else if (windStat == "Aman") {
+                document.getElementById('wind').style.backgroundColor = '#30b005';
+            }
+            setTimeout(() => get_data(a), 1000 * 5)
+
+        }
+
+        get_data(url);
+    </script>
+    </body>
+</html>
