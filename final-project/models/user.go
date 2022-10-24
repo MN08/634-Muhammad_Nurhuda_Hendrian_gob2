@@ -1,13 +1,35 @@
 package models
 
-import "time"
+import (
+	"errors"
+	"fgd-golang/final-project/helpers"
+
+	"github.com/asaskevich/govalidator"
+	"gorm.io/gorm"
+)
 
 type User struct {
-	ID        uint   `gorm:"primaryKey"`
-	Email     string `gorm:"not null;unique;type:varchar(191)"`
-	Username  string `gorm:"not null;unique; varchar(100);"`
-	Password  string `gorm:"not null; varchar(255)"`
-	Age       int    `gorm:"not null;"`
-	CreatedAt time.Time
-	UpdatedAt time.Time
+	GormModel
+	Email    string `gorm:"not null;uniqueIndex" json:"email" form:"email" valid:"email,required"`
+	Username string `gorm:"not null; unique" json:"username" form:"username" valid:"required"`
+	Password string `gorm:"not null" json:"password" form:"password" valid:"required, minstringlength(6)"`
+	Age      int    `gorm:"not null" json:"age" form:"age" valid:"required"`
+}
+
+func (u *User) BeforeCreate(tx *gorm.DB) (err error) {
+	_, errCreate := govalidator.ValidateStruct(u)
+
+	if errCreate != nil {
+		err = errCreate
+		return
+	}
+
+	if u.Age < 8 {
+		err = errors.New("You are too young!")
+		return
+	}
+
+	u.Password = helpers.HashPass(u.Password)
+	err = nil
+	return
 }

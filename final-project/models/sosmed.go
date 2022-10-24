@@ -1,12 +1,38 @@
 package models
 
-import "time"
+import (
+	"github.com/asaskevich/govalidator"
+	"gorm.io/gorm"
+)
 
 type SocialMedia struct {
-	ID               uint   `gorm:"primaryKey"`
-	Name             string `gorm:"not null; varchar(255);"`
-	social_media_url string `gorm:"not null; varchar(255);"`
-	UserID           uint   `json:"UserID" gorm:"index"`
-	CreatedAt        time.Time
-	UpdatedAt        time.Time
+	GormModel
+	Name   string `json:"name" form:"name" valid:"required"`
+	Url    string `json:"url" form:"url" valid:"required"`
+	UserID uint   `gorm:"foreignKey:User_Id" json:"user"`
+	User   *User
+}
+
+func (p *SocialMedia) BeforeCreate(tx *gorm.DB) (err error) {
+	_, errCreate := govalidator.ValidateStruct(p)
+
+	if errCreate != nil {
+		err = errCreate
+		return
+	}
+
+	err = nil
+	return
+}
+
+func (p *SocialMedia) BeforeUpdate(tx *gorm.DB) (err error) {
+	_, errCreate := govalidator.ValidateStruct(p)
+
+	if errCreate != nil {
+		err = errCreate
+		return
+	}
+
+	err = nil
+	return
 }

@@ -1,13 +1,39 @@
 package models
 
-import "time"
+import (
+	"github.com/asaskevich/govalidator"
+	"gorm.io/gorm"
+)
 
 type Photo struct {
-	ID        uint   `gorm:"primaryKey"`
-	Title     string `gorm:"not null;type:varchar(191)"`
-	Caption   string `gorm:"not null; varchar(255);"`
-	PhotoUrl  string `gorm:"not null; varchar(255)"`
-	UserID    uint   `json:"UserID" gorm:"index"`
-	CreatedAt time.Time
-	UpdatedAt time.Time
+	GormModel
+	Title     string `json:"title" form:"title" valid:"required"`
+	Caption   string `json:"caption" form:"caption" valid:"required"`
+	Photo_url string `json:"photo_url" form:"photo_url" valid:"required"`
+	UserID    uint   `gorm:"foreignKey:User_Id" json:"user_Id" gorm:"index"`
+	User      *User
+}
+
+func (p *Photo) BeforeCreate(tx *gorm.DB) (err error) {
+	_, errCreate := govalidator.ValidateStruct(p)
+
+	if errCreate != nil {
+		err = errCreate
+		return
+	}
+
+	err = nil
+	return
+}
+
+func (p *Photo) BeforeUpdate(tx *gorm.DB) (err error) {
+	_, errCreate := govalidator.ValidateStruct(p)
+
+	if errCreate != nil {
+		err = errCreate
+		return
+	}
+
+	err = nil
+	return
 }

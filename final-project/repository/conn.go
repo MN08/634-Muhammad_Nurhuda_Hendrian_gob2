@@ -8,7 +8,12 @@ import (
 	"github.com/jinzhu/gorm"
 )
 
-func StartDb() *gorm.DB {
+var (
+	db  *gorm.DB
+	err error
+)
+
+func StartDb() {
 	dsn := "root:@tcp(127.0.0.1:3306)/finalproject?charset=utf8&parseTime=True&loc=Local"
 	db, err := gorm.Open("mysql", dsn)
 	if err != nil {
@@ -18,5 +23,8 @@ func StartDb() *gorm.DB {
 	fmt.Println("Connected")
 
 	db.AutoMigrate(models.User{}, models.Photo{}, models.Comment{}, models.SocialMedia{})
+}
+
+func GetDB() *gorm.DB {
 	return db
 }
