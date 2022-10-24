@@ -20,24 +20,24 @@ func UserRegister(c *gin.Context) {
 	User := models.User{}
 
 	if contentType == appJSON {
-		c.ShouldBindJSON(&User)
+		c.ShouldBindHeader(&User)
 	} else {
 		c.ShouldBind(&User)
 	}
 
 	err := db.Debug().Create(&User).Error
+
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{
-			"error":   "Bad Request",
+			"error":   "Bad request",
 			"message": err.Error(),
 		})
 		return
 	}
 
 	c.JSON(http.StatusCreated, gin.H{
-		"ID":        User.ID,
+		"id":        User.ID,
 		"email":     User.Email,
 		"full_name": User.FullName,
 	})
-
 }

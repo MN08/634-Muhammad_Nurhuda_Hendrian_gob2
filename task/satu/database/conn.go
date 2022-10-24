@@ -1,8 +1,8 @@
 package database
 
 import (
-	"fgd-golang/task/models"
 	"fmt"
+
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/jinzhu/gorm"
 )
@@ -15,7 +15,5 @@ func StartDb() *gorm.DB {
 	}
 
 	fmt.Println("Connected")
-
-	db.AutoMigrate(models.Bio{})
 	return db
 }

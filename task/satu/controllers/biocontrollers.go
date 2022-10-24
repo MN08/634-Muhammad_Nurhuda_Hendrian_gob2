@@ -8,9 +8,9 @@ import (
 )
 
 type Bio struct {
-	ID         string `json:"ID"`
-	Name       string `json:"Name"`
-	RegisterID uint   `json:"RegID"`
+	ID       string `json:"id"`
+	FullName string `json:"fullName"`
+	RegID    string `json:"regID"`
 }
 
 var bioDatas = []Bio{}
@@ -21,7 +21,7 @@ func CreateBio(ctx *gin.Context) {
 		ctx.AbortWithError(http.StatusBadRequest, err)
 		return
 	}
-	newBio.ID = fmt.Sprintf("c%d", len(bioDatas)+1)
+	newBio.ID = fmt.Sprintf("%d", len(bioDatas)+1)
 	bioDatas = append(bioDatas, newBio)
 
 	ctx.JSON(http.StatusCreated, gin.H{
@@ -36,7 +36,7 @@ func GetBio(ctx *gin.Context) {
 		bioData = bioDatas[i]
 
 		ctx.JSON(http.StatusOK, gin.H{
-			"bio": bioDatas,
+			"bio": bioData,
 		})
 	}
 }

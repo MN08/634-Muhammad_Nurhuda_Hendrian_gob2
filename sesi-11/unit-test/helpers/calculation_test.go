@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"testing"
 
+	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
 
@@ -29,17 +30,17 @@ import (
 // }
 
 // with testify
-// func TestFailSum(t *testing.T) {
-// 	result := Sum(10, 10)
-// 	require.Equal(t, 40, result, "result should be 40")
-// 	fmt.Println("test failed")
-// }
+func TestFailSum(t *testing.T) {
+	result := Sum(10, 10)
+	require.Equal(t, 40, result, "result should be 40")
+	fmt.Println("test failed")
+}
 
-// func TestSum(t *testing.T) {
-// 	result := Sum(10, 10)
-// 	require.Equal(t, 20, result, "result should be 20")
-// 	fmt.Println("test Ended")
-// }
+func TestSum(t *testing.T) {
+	result := Sum(10, 10)
+	assert.Equal(t, 20, result, "result should be 20")
+	fmt.Println("test Ended")
+}
 
 // Table Test
 func TestTableSum(t *testing.T) {
