@@ -12,7 +12,7 @@ type User struct {
 	GormModel
 	Email    string `gorm:"not null;uniqueIndex" json:"email" form:"email" valid:"email,required"`
 	Username string `gorm:"not null; unique" json:"username" form:"username" valid:"required"`
-	Password string `gorm:"not null" json:"password" form:"password" valid:"required, minstringlength(6)"`
+	Password string `gorm:"not null" json:"password" form:"password" valid:"required, minstringlength(8)"`
 	Age      int    `gorm:"not null" json:"age" form:"age" valid:"required"`
 }
 
